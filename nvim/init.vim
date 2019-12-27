@@ -20,9 +20,14 @@ if filereadable(expand("~/.config/nvim/vim_editing_init.vim"))
   source ~/.config/nvim/vim_editing_init.vim
   endif
 
-"" Include C++/C settings
+""" Include C++/C settings
 if filereadable(expand("~/.config/nvim/vim_cpp_init.vim"))
   source ~/.config/nvim/vim_cpp_init.vim
+  endif
+
+ " Include GO settings
+if filereadable(expand("~/.config/nvim/vim_go_init.vim"))
+  source ~/.config/nvim/vim_go_init.vim
   endif
 
   "" Include UI settings
@@ -48,16 +53,10 @@ augroup vimrc-sync-fromstart
   autocmd BufEnter * :syntax sync maxlines=200
 augroup END
 
-"" Remember cursor position
-augroup vimrc-remember-cursor-position
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END
-
 "" txt
 augroup vimrc-wrapping
   autocmd!
-  autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
+  autocmd BufRead,BufNewFile *.txt call vim_ui_init#setupWrapping()
 augroup END
 
 "" make/cmake

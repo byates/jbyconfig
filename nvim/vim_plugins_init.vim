@@ -1,6 +1,7 @@
 "*****************************************************************************
 "" Vim-PLug core
 "*****************************************************************************
+
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
 if !filereadable(vimplug_exists)
@@ -13,7 +14,7 @@ if !filereadable(vimplug_exists)
   silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   let g:not_finish_vimplug = "yes"
 
-  autocmd VimEnter * PlugInstall
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Required:
@@ -34,11 +35,12 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   Plug 'henrik/vim-indexed-search'
   Plug 'tomasr/molokai'
   Plug 'morhetz/gruvbox'
+  Plug 'romainl/vim-qf'
 " }}}
 
 " Git {{{
-  Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
+  Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
 " }}}
 
@@ -53,8 +55,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" }}}
 
 " Programming {{{
+  Plug 'editorconfig/editorconfig-vim'
   Plug 'majutsushi/tagbar'
-  Plug 'sheerun/vim-polyglot'
   Plug 'Raimondi/delimitMate'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-commentary'
@@ -75,6 +77,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   "" the Requirements File Format syntax support for Vim
   Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 ""  Plug 'w0rp/ale'"
+  Plug 'sheerun/vim-polyglot'
 " }}} 
 
 call plug#end()

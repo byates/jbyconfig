@@ -31,6 +31,14 @@ nmap <silent> gr <Plug>(coc-references)
 " Use \ to show documentation in preview window
 nnoremap <silent> \ :call <SID>show_documentation()<CR>
 
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 

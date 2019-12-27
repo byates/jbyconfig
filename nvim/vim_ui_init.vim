@@ -80,13 +80,11 @@ nnoremap <silent> <leader>sh :terminal<CR>
 "*****************************************************************************
 "" Functions
 "*****************************************************************************
-if !exists('*s:setupWrapping')
-  function s:setupWrapping()
+ function vim_ui_init#setupWrapping()
     set wrap
     set wm=2
     set textwidth=100
-  endfunction
-endif
+ endfunction
 
 " ------------------------------------------------------------------------------
 "  AIRLINE SETTINGS
