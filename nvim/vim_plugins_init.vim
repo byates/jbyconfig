@@ -74,10 +74,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
   "" Python Bundle
   Plug 'davidhalter/jedi-vim'
-  "" the Requirements File Format syntax support for Vim
-  Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 ""  Plug 'w0rp/ale'"
   Plug 'sheerun/vim-polyglot'
+  Plug 'liuchengxu/vista.vim'
 " }}} 
 
 call plug#end()

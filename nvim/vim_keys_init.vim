@@ -66,10 +66,6 @@ cnoreabbrev Qall qall
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
 
-noremap YY "+y<CR>
-noremap <leader>p "+gP<CR>
-noremap XX "+x<CR>
-
 "" Buffer nav
 noremap <leader>z :bp<CR>
 noremap <leader>x :bn<CR>
@@ -99,15 +95,16 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-" command -bang -nargs=? QFix call QFixToggle(<bang>0)
-" function! QFixToggle(forced)
-"   if exists("g:qfix_win") && a:forced == 0
-"     cclose
-"     unlet g:qfix_win
-"   else
-"     copen 10
-"     let g:qfix_win = bufnr("$")
-"   endif
-" endfunction
-" nmap <silent> ' :QFix<CR>
+"" Fix delete so it doesn't overwrite the paster buffer
+nnoremap d "_d
+vnoremap d "_d
+nnoremap x "_x
+nnoremap <Del> "_x
+xnoremap <leader>p "_dP
+noremap YY "+y<CR>
+noremap XX "+x<CR>
+"" Copy current word
+nnoremap <leader>e yiwe
+"" Replace current word
+nnoremap <leader>w viw"_dPe
 
