@@ -1,11 +1,21 @@
-#! /bin/bash
+#!/usr/bin/env bash
+
+{ # this ensures the entire script is downloaded #
+
+refresh_sudo_indefinitely()
+{
+    while true; do
+        /usr/bin/sudo -v && sleep 5 || { echo "sudo verification failed"; break; }
+    done
+}
 
 exit_on_error() {
     exit_code=$1
     if [ $exit_code -ne 0 ]; then
-	>&2 echo "-------------------------------------------------"
+        >&2 echo "-------------------------------------------------"
         >&2 echo "Command failed with exit code ${exit_code}."
-	>&2 echo "-------------------------------------------------"
+        >&2 echo "-------------------------------------------------"
+        kill $(jobs -p)
         exit $exit_code
     fi
 }
@@ -13,20 +23,27 @@ exit_on_error() {
 exit_on_requirment() {
     exit_code=$1
     if [ $exit_code -ne 0 ]; then
-	>&2 echo "-------------------------------------------------"
+        >&2 echo "-------------------------------------------------"
         >&2 echo $2
-	>&2 echo "-------------------------------------------------"
+        >&2 echo "-------------------------------------------------"
+        kill $(jobs -p)
         exit $exit_code
     fi
 }
 
 # check requirements
+if [ "$EUID" -eq 0 ]
+  then echo "Can't run as root"
+  exit
+fi
 python3 --version
 exit_on_requirment $? "python3 required by this script"
 
+# Get SUDO credentials for later use
+/usr/bin/sudo -v
+refresh_sudo_indefinitely &
 
 # Install prereqs
-
 sudo yum -y install ninja-build libtool autoconf automake cmake gcc gcc-c++ make pkgconfig unzip patch
 exit_on_error $?
 
@@ -109,6 +126,7 @@ else
 fi
 popd
 
+kill $(jobs -p)
 
-
+} # this ensures the entire script is downloaded #
 
