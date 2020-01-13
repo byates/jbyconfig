@@ -128,5 +128,12 @@ popd
 
 kill $(jobs -p)
 
+>&2 echo ""
+>&2 echo ""
+>&2 echo "------------------------------------------------------------"
+>&2 echo " RESTART SHELL BEFORE RUNNING NVIM FOR THE FIRST TIME. "
+>&2 echo "------------------------------------------------------------"
+
+
 } # this ensures the entire script is downloaded #
 
