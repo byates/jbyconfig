@@ -108,3 +108,6 @@ nnoremap <leader>e yiwe
 "" Replace current word
 nnoremap <leader>w viw"_dPe
 
+"Remove all trailing whitespace by pressing ,<backspace>
+nnoremap <leader><BS> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
