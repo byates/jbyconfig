@@ -50,10 +50,6 @@ command! FixWhitespace :%s/\s\+$//e
 
 " Cursor and Scrolling {{{
 
-  set number
-  set relativenumber
-  set cursorline
-
   " remember cursor position
   augroup vimrc-editing-remember-cursor-position
     autocmd!

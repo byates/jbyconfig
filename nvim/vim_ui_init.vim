@@ -17,6 +17,8 @@ set signcolumn=yes
 syntax on
 set ruler
 set number
+"" set relativenumber
+set cursorline
 
 "
 set mousemodel=popup
