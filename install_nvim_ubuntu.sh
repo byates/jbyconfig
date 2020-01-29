@@ -44,7 +44,7 @@ exit_on_requirment $? "python3 required by this script"
 refresh_sudo_indefinitely &
 
 # Install prereqs
-sudo apt -y install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
+sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
 exit_on_error $?
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.0/install.sh | bash
@@ -63,7 +63,7 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 exit_on_error $?
 
-sudo apt -y install yarn
+sudo apt install -y yarn
 npm install -g diff-so-fancy
 
 mkdir -p ~/tools && pushd ~/tools
