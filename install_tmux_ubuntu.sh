@@ -42,7 +42,7 @@ fi
 refresh_sudo_indefinitely &
 
 # Install prereqs
-sudo apt -y install automake build-essential libncurses5-dev libncursesw5-dev bison flex
+sudo apt install -y automake build-essential libncurses5-dev libncursesw5-dev bison flex
 exit_on_error $?
 
 mkdir -p ~/tools && pushd ~/tools
