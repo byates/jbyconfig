@@ -91,22 +91,23 @@ popd
 
 python3 --version
 exit_on_error $?
-sudo pip install --upgrade setuptools pip
+sudo apt install -y python3-pip python3-dev python3-setuptools
+#pip install --upgrade setuptools pip
 
 if python -c 'import pkgutil; exit(not pkgutil.find_loader("neovim"))'; then
 	echo 'python2 neovim found'
 else
-	pip2 install --user neovim
+	pip2 install --user wheel neovim
 fi
 
 if python3 -c 'import pkgutil; exit(not pkgutil.find_loader("neovim"))'; then
 	echo 'python3 neovim found'
 else
-	pip3 install --user neovim
+	pip3 install --user wheel neovim
 fi
 
 exit_on_error $?
-sudo npm install -g neovim
+npm install -g neovim
 yarn global add neovim
 sudo ln -sf /usr/local/bin/nvim /usr/bin/nvim
 
@@ -137,4 +138,3 @@ kill $(jobs -p)
 
 
 } # this ensures the entire script is downloaded #
-
