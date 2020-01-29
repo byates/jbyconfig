@@ -90,7 +90,6 @@ popd
 
 python3 --version
 exit_on_error $?
-sudo pip install --upgrade setuptools pip
 
 if python -c 'import pkgutil; exit(not pkgutil.find_loader("neovim"))'; then
 	echo 'python2 neovim found'
@@ -105,7 +104,7 @@ else
 fi
 
 exit_on_error $?
-sudo npm install -g neovim
+npm install -g neovim
 yarn global add neovim
 sudo ln -sf /usr/local/bin/nvim /usr/bin/nvim
 
