@@ -50,11 +50,14 @@ command! FixWhitespace :%s/\s\+$//e
 
 " Cursor and Scrolling {{{
 
-  " remember cursor position
-  augroup vimrc-editing-remember-cursor-position
+"" Enable virtual edit (allow cursor beyond eol)
+:set virtualedit=all
+
+" remember cursor position
+augroup vimrc-editing-remember-cursor-position
     autocmd!
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exec "normal! g`\"" | endif
-  augroup END
+augroup END
 
 " }}}
 
