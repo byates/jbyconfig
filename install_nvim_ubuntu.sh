@@ -120,7 +120,14 @@ fi
 
 if [ ! -d .config/nvim ]; then
 	mkdir -p ~/.config/nvim
-	cp ~/jbyconfig/nvim/* ~/.config/nvim
+    ln -s ~/jbyconfig/nvim/init.vim             ~/.config/nvim/init.vim
+    ln -s ~/jbyconfig/nvim/vim_go_init.vim      ~/.config/nvim/vim_go_init.vim
+    ln -s ~/jbyconfig/nvim/vim_ui_init.vim      ~/.config/nvim/vim_ui_init.vim
+    ln -s ~/jbyconfig/nvim/vim_cpp_init.vim     ~/.config/nvim/vim_cpp_init.vim
+    ln -s ~/jbyconfig/nvim/vim_keys_init.vim    ~/.config/nvim/vim_keys_init.vim
+    ln -s ~/jbyconfig/nvim/vim_python_init.vim  ~/.config/nvim/vim_python_init.vim
+    ln -s ~/jbyconfig/nvim/vim_editing_init.vim ~/.config/nvim/vim_editing_init.vim
+    ln -s ~/jbyconfig/nvim/vim_plugins_init.vim ~/.config/nvim/vim_plugins_init.vim
 else
 	>&2 echo "------------------------------------------------------------"
 	>&2 echo "  SKIPPING CONFIG UPDATE SINCE ~/.config/nvim ALREADY EXISTS"
