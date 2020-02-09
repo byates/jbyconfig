@@ -52,6 +52,10 @@ call plug#begin(expand('~/.config/nvim/plugged'))
    Plug 'tpope/vim-eunuch'
    "" Vim-Session
    Plug 'xolox/vim-misc'
+   "" FZF
+   Plug 'bogado/file-line'
+   Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
+   Plug 'yuki-ycino/fzf-preview.vim'
 "" }}}
 
 " Programming {{{
