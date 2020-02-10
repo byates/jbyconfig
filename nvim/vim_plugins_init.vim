@@ -64,7 +64,11 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   Plug 'tpope/vim-surround'
   Plug 'andymass/vim-matchup'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+  "" Autocomplete from other tmux windows
+  Plug 'prabirshrestha/async.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'wellle/tmux-complete.vim'
+  "" <leader><leader>w quick jump
   Plug 'easymotion/vim-easymotion'
   Plug 'junegunn/vim-easy-align'
   "" LineJuggler: quickly duplicate and move lines to above / below the current line

@@ -62,4 +62,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+nnoremap <silent> <F2> :TagbarToggle<CR>
+nnoremap <silent> <F5> :FzfPreviewProjectGrep<CR>
 
