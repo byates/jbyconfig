@@ -102,7 +102,7 @@ if [ ! -d jbyconfig ]; then
 fi
 
 if [ ! -f .tmux.conf ]; then
-	cp ~/jbyconfig/.tmux.conf  ~/.tmux.conf
+    ln -s ~/jbyconfig/.tmux.conf ~/.tmux.conf
 else
 	>&2 echo "----------------------------------------------------------"
 	>&2 echo "  SKIPPING CONFIG UPDATE SINCE ~/.tmux.conf ALREADY EXISTS"
