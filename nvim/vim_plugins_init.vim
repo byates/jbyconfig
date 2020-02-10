@@ -24,27 +24,25 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 
-" UI {{{
+" UI
   Plug 'mhinz/vim-startify'
   Plug 'moll/vim-bbye'
-  Plug 'gerw/vim-HiLinkTrace'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'Yggdroot/indentLine'
+  "" Make gvim-only colorschemes work transparently in terminal vim
   Plug 'vim-scripts/CSApprox'
   Plug 'henrik/vim-indexed-search'
   Plug 'tomasr/molokai'
   Plug 'morhetz/gruvbox'
   Plug 'romainl/vim-qf'
-" }}}
 
-" Git {{{
+" Git
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-" }}}
 
-" Files {{{
+" Files
    Plug 'scrooloose/nerdtree'
    Plug 'jistr/vim-nerdtree-tabs'
    Plug 'jlanzarotta/bufexplorer'
@@ -56,9 +54,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
    Plug 'bogado/file-line'
    Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
    Plug 'yuki-ycino/fzf-preview.vim'
-"" }}}
 
-" Programming {{{
+" Programming
   Plug 'editorconfig/editorconfig-vim'
   Plug 'majutsushi/tagbar'
   Plug 'Raimondi/delimitMate'
@@ -67,8 +64,10 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   Plug 'tpope/vim-surround'
   Plug 'andymass/vim-matchup'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
   Plug 'easymotion/vim-easymotion'
   Plug 'junegunn/vim-easy-align'
+  "" LineJuggler: quickly duplicate and move lines to above / below the current line
   Plug 'inkarkat/vim-ingo-library'  " required by LineJuggler
   Plug 'inkarkat/vim-LineJuggler', { 'branch': 'stable' }
   "" Snippets
@@ -81,7 +80,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 ""  Plug 'w0rp/ale'"
   Plug 'sheerun/vim-polyglot'
   Plug 'liuchengxu/vista.vim'
-" }}} 
 
 call plug#end()
 

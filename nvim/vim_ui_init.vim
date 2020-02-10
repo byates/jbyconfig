@@ -23,16 +23,21 @@ set cursorline
 "
 set mousemodel=popup
 set mouse=nv
-"" Setting terminal to 256 must be before color scheme
-set t_Co=256
+"" Check to see if the current terminal supports true color. If not
+"" fall back to 256 colors.
+if (has("termguicolors"))
+    set termguicolors
+else
+    "" Setting terminal to 256 must be before color scheme
+    set t_Co=256
+    " Molokai setting to make dark theme more accurate?
+    let g:rehash256 = 1
+    let g:CSApprox_loaded = 1
+endif
 
 let no_buffers_menu=1
 set background=dark
 silent! colorscheme gruvbox   "molokai
-" Molokai setting to make dark theme more accurate?
-let g:rehash256 = 1
-
-let g:CSApprox_loaded = 1
 
 " IndentLine
 let g:indentLine_enabled = 1
