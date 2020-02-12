@@ -111,3 +111,18 @@ nnoremap <leader>w viw"_dPe
 "Remove all trailing whitespace by pressing ,<backspace>
 nnoremap <leader><BS> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+" Toggle signcolumn. Works only on vim>=8.0 or NeoVim
+function! ToggleSignColumn()
+    if !exists("b:signcolumn_on") || b:signcolumn_on
+        set signcolumn=no
+        let b:signcolumn_on=0
+    else
+        set signcolumn=auto
+        let b:signcolumn_on=1
+    endif
+endfunction
+
+"" Add toggle for line numbers and sign column
+noremap <leader>n :set invnumber<CR>:call ToggleSignColumn()<CR>
+
+
