@@ -108,6 +108,9 @@ nnoremap <leader>e yiwe
 "" Replace current word
 nnoremap <leader>w viw"_dPe
 
+"" Make shift+<arrows/home/end> work like other editors.
+set keymodel=startsel,stopsel
+
 "Remove all trailing whitespace by pressing ,<backspace>
 nnoremap <leader><BS> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
@@ -125,4 +128,7 @@ endfunction
 "" Add toggle for line numbers and sign column
 noremap <leader>n :set invnumber<CR>:call ToggleSignColumn()<CR>
 
+nnoremap <silent> <F2> :TagbarToggle<CR>
+nnoremap <silent> <F5> :FzfPreviewProjectGrep<CR>
+nnoremap <leader>b :FzfPreviewBuffers<CR>
 
