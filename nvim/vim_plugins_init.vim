@@ -52,6 +52,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
    Plug 'xolox/vim-misc'
    "" FZF
    Plug 'bogado/file-line'
+   Plug 'rbtnn/vim-jumptoline'
    Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
    Plug 'yuki-ycino/fzf-preview.vim'
 
