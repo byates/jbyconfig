@@ -44,7 +44,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 
 " Files
    Plug 'scrooloose/nerdtree'
-   Plug 'jistr/vim-nerdtree-tabs'
    Plug 'jlanzarotta/bufexplorer'
    Plug 'vim-scripts/grep.vim'
    Plug 'tpope/vim-eunuch'

@@ -75,11 +75,20 @@ let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycach
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+""let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
+" Make NERDTree play nice with startify
+let NERDTreeHijackNetrw=0
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <C-F3> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
+
+let g:startify_session_before_save = [
+    \ 'echo "Cleaning up before saving.."',
+    \ 'silent! NERDTreeClose',
+    \ 'silent! TagbarClose',
+    \ ]
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>

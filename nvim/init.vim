@@ -73,5 +73,13 @@ augroup completion_preview_close
   endif
 augroup END
 
-
+"" Add commands for statup screen (such as nerdtree) if desired.
+augroup Startup
+  autocmd!
+  autocmd VimEnter *
+                \   if !argc()
+                \ |   Startify
+                \ |   wincmd w
+                \ | endif
+augroup END
 
