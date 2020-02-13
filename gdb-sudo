@@ -1,0 +1,10 @@
+#!/bin/sh
+# vscode has issues asking for root password. To work around this,
+# this script is used to force sudo.
+# Also, you must edit the sudoers file to add this script to the
+# list of applicaitons the user can run as sudo without needing a
+# passord.
+#  <user> ALL = NOPASSWD: /full/path/to/this/script
+
+/usr/bin/sudo /opt/rh/devtoolset-8/root/usr/bin/gdb "$@"
+

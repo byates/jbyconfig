@@ -49,7 +49,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
    Plug 'tpope/vim-eunuch'
    "" Vim-Session
    Plug 'xolox/vim-misc'
-   "" FZF
+   "" FZF fuzzy searching
    Plug 'bogado/file-line'
    Plug 'rbtnn/vim-jumptoline'
    Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
@@ -58,6 +58,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " Programming
   Plug 'editorconfig/editorconfig-vim'
   Plug 'majutsushi/tagbar'
+  "" may be use at some point but for now we will use tagbar.
+  ""Plug 'liuchengxu/vista.vim'
   Plug 'Raimondi/delimitMate'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-commentary'
@@ -75,19 +77,19 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   Plug 'inkarkat/vim-ingo-library'  " required by LineJuggler
   Plug 'inkarkat/vim-LineJuggler', { 'branch': 'stable' }
   "" Snippets
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+  ""Plug 'SirVer/ultisnips'
+  ""Plug 'honza/vim-snippets'
   "" Go Lang Bundle
   Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
   "" Python Bundle
   Plug 'davidhalter/jedi-vim'
-""  Plug 'w0rp/ale'"
   Plug 'sheerun/vim-polyglot'
-  Plug 'liuchengxu/vista.vim'
+
 
 call plug#end()
 
 " Required:
 filetype plugin indent on
 
+packadd termdebug
 
