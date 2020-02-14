@@ -21,6 +21,10 @@
                 }
             }
         }
+    },
+
+    "yaml.schemas": {
+       "http://json.schemastore.org/ansible-stable-2.7": "/*.yml"
     }
 }
 
