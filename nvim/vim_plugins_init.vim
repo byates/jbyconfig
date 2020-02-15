@@ -54,6 +54,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
    Plug 'rbtnn/vim-jumptoline'
    Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
    Plug 'yuki-ycino/fzf-preview.vim'
+   "" find and replace text through multiple files
+   Plug 'brooth/far.vim'
 
 " Programming
   Plug 'editorconfig/editorconfig-vim'
