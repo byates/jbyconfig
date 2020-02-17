@@ -36,6 +36,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   Plug 'tomasr/molokai'
   Plug 'morhetz/gruvbox'
   Plug 'romainl/vim-qf'
+  "" Tries to set paste indent on/off automagically
+  Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Git
   Plug 'tpope/vim-rhubarb'

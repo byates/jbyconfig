@@ -19,24 +19,25 @@ command! FixWhitespace :%s/\s\+$//e
 "
 " Indentination {{{
 
-  function SetIndent(expandtab, shiftwidth)
-    let &l:expandtab = a:expandtab
-    let &l:shiftwidth = str2nr(a:shiftwidth)
-    let &l:tabstop = &shiftwidth
-    let &l:softtabstop = &shiftwidth
-  endfunction
-  command -nargs=1 Indent call SetIndent(1, <q-args>)
-  command -nargs=1 IndentTabs call SetIndent(0, <q-args>)
+function SetIndent(expandtab, shiftwidth)
+  let &l:expandtab = a:expandtab
+  let &l:shiftwidth = str2nr(a:shiftwidth)
+  let &l:tabstop = &shiftwidth
+  let &l:softtabstop = &shiftwidth
+endfunction
 
-  " use 4 spaces for indentination
-  set expandtab shiftwidth=4 tabstop=4 softtabstop=4
-  " round indents to multiple of shiftwidth when using shift (< and >) commands
-  set shiftround
+""#command -nargs=1 Indent call SetIndent(1, <q-args>)
+""#command -nargs=1 IndentTabs call SetIndent(0, <q-args>)
 
-  let g:indentLine_char = "\u2502"
-  let g:indentLine_first_char = g:indentLine_char
-  let g:indentLine_showFirstIndentLevel = 1
-  let g:indentLine_fileTypeExclude = ['text', 'help', 'tutor', 'man']
+" use 4 spaces for indentination
+set expandtab shiftwidth=4 tabstop=4 softtabstop=4
+" round indents to multiple of shiftwidth when using shift (< and >) commands
+set shiftround
+
+let g:indentLine_char = "\u2502"
+let g:indentLine_first_char = g:indentLine_char
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_fileTypeExclude = ['text', 'help', 'tutor', 'man']
 
 " }}}
 

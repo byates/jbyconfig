@@ -110,6 +110,9 @@ noremap XX "+x<CR>
 nnoremap <leader>e yiwe
 "" Replace current word
 nnoremap <leader>w viw"_dPe
+"" Keymap to toggle "paste" mode on/off. This helps fix indent when pasting.
+nnoremap <leader>P :set invpaste paste?<CR>
+set pastetoggle=<leader>P
 
 "" Make shift+<arrows/home/end> work like other editors.
 set keymodel=startsel,stopsel
