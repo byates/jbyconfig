@@ -5,7 +5,7 @@ PS1='\n\[\e[01;36m\]\u \[\e[0m\]on \[\e[01;33m\]\h \[\e[0m\]in \[\e[01;34m\]\w\[
 
 export HISTSIZE=2000
 export HISTFILESIZE=2000
-export HISTIGNORE="&:[ ]*:exit:ls:la:ll:lll:history"
+export HISTIGNORE="&:[ ]*:exit:ls:la:ll:lll:history:env sh /tmp/Microsoft-MIEngine-Cmd*"
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 # Turn off history substitution "!" in bash commands.
@@ -17,7 +17,7 @@ alias ll='ls -l --color=auto --group-directories-first'
 alias lll='ls -lA --color=auto --group-directories-first'
 alias rsyncp='rsync -avzh --info=progress2 --info=name0 --stats'
 if type nvim > /dev/null 2>&1; then
-    alias vim='nvim'
+  alias vim='nvim'
 fi
 
 export PATH=$PATH:/usr/local/go/bin
@@ -59,7 +59,7 @@ export RTE_SDK=$HOME/tools/${DPDK_VER}
 export RTE_TARGET=x86_64-native-linux-gcc
 export PKG_CONFIG_PATH=~/tools/${DPDK_VER}/build/meson-private:$PKG_CONFIG_PATH
 alias dpstat='~/tools/${DPDK_VER}/usertools/dpdk-devbind.py --status'
-alias dpbind='/usr/bin/sudo -E ~/tools/${DPDK_VER}/usertools/dpdk-devbind.py --force --bind=igb_uio'
+alias dpbind='/usr/bin/sudo -E ~/tools/${DPDK_VER}/usertools/dpdk-devbind.py --force --bind=vfio-pci'
 alias dpunbind='/usr/bin/sudo -E ~/tools/${DPDK_VER}/usertools/dpdk-devbind.py -u'
 
 # dsf A B will procude "fancy" diffs.
