@@ -70,7 +70,7 @@ export NVM_DIR="$HOME/.nvm"
 
 major=$(cat /etc/centos-release 2>/dev/null | tr -dc '0-9.'|cut -d \. -f1)
 if [ -f /etc/centos-release ] && [ $major == "7" ]; then
-    source scl_source enable devtoolset-8 rh-python36 llvm-toolset-7.0
+    source scl_source enable devtoolset-8 llvm-toolset-7.0
 fi
 
 # lauch shell as tmux session
