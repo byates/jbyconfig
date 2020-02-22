@@ -88,6 +88,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   "" Python Bundle
   Plug 'davidhalter/jedi-vim'
   Plug 'sheerun/vim-polyglot'
+  "" Understands ansible yaml formats
+  Plug 'pearofducks/ansible-vim'
 
 
 call plug#end()

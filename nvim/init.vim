@@ -35,6 +35,11 @@ if filereadable(expand("~/.config/nvim/vim_ui_init.vim"))
   source ~/.config/nvim/vim_ui_init.vim
   endif
 
+  "" Include ansible settings
+if filereadable(expand("~/.config/nvim/vim_ansible.vim"))
+  source ~/.config/nvim/vim_ansible.vim
+  endif
+
 "*****************************************************************************
 "" Basic Setup
 "*****************************************************************************"
