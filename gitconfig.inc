@@ -1,6 +1,3 @@
-[user]
-    name = Brent Yates
-    email = bent.yates@hellastorm.com
 [core]
     editor = nvim
     autocrlf = false
