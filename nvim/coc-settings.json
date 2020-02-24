@@ -20,11 +20,19 @@
                     "directory": "/tmp/ccls"
                 }
             }
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"],
+            "initializationOptions": {
+                "usePlaceholders": true
+            }
         }
     },
 
     "yaml.schemas": {
-       "http://json.schemastore.org/ansible-stable-2.7": "/*.yml"
+        "http://json.schemastore.org/ansible-stable-2.7": "/*.yml"
     }
 }
 

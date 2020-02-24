@@ -1,4 +1,4 @@
-" vim-bootstrap 
+" vim-bootstrap
 
 " Folder in which script resides
 let g:nvim_dotfiles_dir = expand('<sfile>:p:h')
@@ -28,6 +28,11 @@ if filereadable(expand("~/.config/nvim/vim_cpp_init.vim"))
  " Include GO settings
 if filereadable(expand("~/.config/nvim/vim_go_init.vim"))
   source ~/.config/nvim/vim_go_init.vim
+  endif
+
+ " Include Python settings
+if filereadable(expand("~/.config/nvim/vim_python_init.vim"))
+  source ~/.config/nvim/vim_python_init.vim
   endif
 
   "" Include UI settings

@@ -55,11 +55,6 @@ augroup go
 
 augroup END
 
-" " ale
-" ":call extend(g:ale_linters, {
-"     \"go": ['golint', 'go vet'], })
-
-
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
