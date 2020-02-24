@@ -1,13 +1,15 @@
 [core]
     editor = nvim
     autocrlf = false
-    pager = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
     tree = log --all --graph
     unstage = reset HEAD --
     discard = checkout
     ll = log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
     llg = log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --graph
+    difm = diff --diff-filter=M
+    difms = diff --diff-filter=M --staged
 [color]
     ui = true
 [color "diff-highlight"]
