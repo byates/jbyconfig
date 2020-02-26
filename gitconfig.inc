@@ -1,7 +1,7 @@
 [core]
     editor = nvim
     autocrlf = false
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta --theme="DarkNeon" --file-style=box
 [alias]
     tree = log --all --graph
     unstage = reset HEAD --

@@ -62,7 +62,7 @@ alias dpbind='/usr/bin/sudo -E ~/tools/${DPDK_VER}/usertools/dpdk-devbind.py --f
 alias dpunbind='/usr/bin/sudo -E ~/tools/${DPDK_VER}/usertools/dpdk-devbind.py -u'
 
 # dsf A B will procude "fancy" diffs.
-function dsf() { diff -u $1 $2 | diff-so-fancy; }
+function dsf() { diff -u $1 $2 | delta; }
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
