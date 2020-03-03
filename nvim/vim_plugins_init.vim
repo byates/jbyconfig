@@ -38,6 +38,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   Plug 'romainl/vim-qf'
   "" Tries to set paste indent on/off automagically
   Plug 'ConradIrwin/vim-bracketed-paste'
+  "" Multipel word highlight
+  Plug 'inkarkat/vim-mark'
 
 " Git
   Plug 'tpope/vim-rhubarb'
