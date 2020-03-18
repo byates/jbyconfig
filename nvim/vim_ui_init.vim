@@ -155,4 +155,5 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
+set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 

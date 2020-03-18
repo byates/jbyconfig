@@ -16,7 +16,7 @@ set autoread
 command! FixWhitespace :%s/\s\+$//e
 
 "
-" Indentination {{{
+" Indentination
 
 function SetIndent(expandtab, shiftwidth)
   let &l:expandtab = a:expandtab
@@ -38,17 +38,14 @@ let g:indentLine_first_char = g:indentLine_char
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_fileTypeExclude = ['text', 'help', 'tutor', 'man']
 
-" }}}
 
-
-" Invisible characters {{{
+" Invisible characters
   set list
   let &listchars = "tab:\u2192 ,extends:>,precedes:<,eol:\u00ac,trail:\u00b7"
   let &showbreak = '>'
-" }}}
 
 
-" Cursor and Scrolling {{{
+" Cursor and Scrolling
 
 "" Enable virtual edit (allow cursor beyond eol)
 :set virtualedit=all
@@ -59,15 +56,12 @@ augroup vimrc-editing-remember-cursor-position
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exec "normal! g`\"" | endif
 augroup END
 
-" }}}
 
-
-" Wrapping {{{
+" Wrapping
 set nowrap
 set colorcolumn=120
-" }}}
 
-" Search {{{
+" Search
 
 "" Searching
 set hlsearch
@@ -94,6 +88,7 @@ function! s:VisualStarSearch(search_cmd)
     let @/ = '\V' . substitute(escape(@", a:search_cmd . '\'), '\n', '\\n', 'g')
     let @" = l:tmp
 endfunction
+
 " HACK: my mappings are added on VimEnter to override mappings from the
 " vim-indexed-search plugin
 augroup vimrc-editing-visual-star-search
@@ -126,10 +121,8 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
-" }}}
 
-
-" Replace {{{
+" Replace
 
   " show the effects of the :substitute command incrementally, as you type
   " (works similar to 'incsearch')
@@ -141,18 +134,13 @@ let Grep_Skip_Dirs = '.git node_modules'
   nnoremap gss :%s///g<Left><Left>
   xnoremap gss :s///g<Left><Left>
 
-" }}}
 
-
-" Formatting {{{
+" Formatting
 
   " don't insert a comment after hitting 'o' or 'O' in the Normal mode
   augroup vimrc-editing-formatting
     autocmd!
     autocmd FileType * set formatoptions-=o
   augroup END
-
-" }}}
-
 
 

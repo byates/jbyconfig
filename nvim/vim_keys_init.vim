@@ -13,7 +13,7 @@ nnoremap N Nzzzv
 "" Fix backspace key so that it works as expected.
 set backspace=indent,eol,start
 
-" Mappings {{{
+" Mappings
 
 " stay in the Visual mode when using shift commands
 xnoremap < <gv
@@ -25,7 +25,7 @@ nmap <silent> <leader>[ m'yygccP`'k
 
 command! -nargs=+ -complete=command PutOutput execute 'put =execute(' . escape(string(<q-args>), '|"') . ')'
 
-" Clipboard {{{
+" Clipboard
 
 " Copy/Paste/Cut
 if has('unnamedplus')
@@ -40,14 +40,11 @@ noremap <leader>c "+
 " noremap <leader>cv "+gP
 " noremap <leader>cV "+gp
 " noremap <leader>cx "+d
-" }}}
 
 " make the default Vim mappings more consistent
 " https://www.reddit.com/r/vim/comments/dgbr9l/mappings_i_would_change_for_more_consistent_vim/
 nnoremap U <C-r>
 nnoremap Y y$
-
-" }}}
 
 "" Abbreviations
 "*****************************************************************************
@@ -132,7 +129,7 @@ function! ToggleSignColumn()
 endfunction
 
 "" Add toggle for line numbers and sign column
-noremap <leader>n :set invnumber<CR>:call ToggleSignColumn()<CR>
+noremap <leader><leader>n :set invnumber<CR>:call ToggleSignColumn()<CR>
 
 nnoremap <silent> <F2> :TagbarToggle<CR>
 nnoremap <silent> <F5> :FzfPreviewProjectGrep<CR>

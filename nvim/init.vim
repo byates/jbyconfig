@@ -76,6 +76,12 @@ augroup vimrc-make-cmake
   autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
 
+"" buildroot
+augroup vimrc-builtroot
+  autocmd!
+  autocmd BufRead,BufNewFile Config.in call SetIndent(0, 4)
+augroup END
+
 augroup completion_preview_close
   autocmd!
   if v:version > 703 || v:version == 703 && has('patch598')
