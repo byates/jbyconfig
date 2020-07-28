@@ -1,4 +1,4 @@
-# ADDED HELLASTORM
+# ADDED JBY
 #
 
 PS1='\n\[\e[01;36m\]\u \[\e[0m\]on \[\e[01;33m\]\h \[\e[0m\]in \[\e[01;34m\]\w\[\e[0m\]\n$ '
