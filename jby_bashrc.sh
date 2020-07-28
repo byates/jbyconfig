@@ -23,10 +23,6 @@ fi
 export loc_linux_kernel_generic=/usr/src/kernels/$(uname -r)
 export loc_linux_kernel=/usr/src/kernels/$(basename $(uname -r) -generic)
 
-export GOPATH=$HOME/AppDev/go
-
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
 #------------------------------------------------------------
 # the following makes sure that ssh-agent runs for each shell
 # this is necessary for git access with key files.
