@@ -23,8 +23,6 @@ let g:jedi#smart_auto_mappings = 0
 " "    \'python': ['flake8'], })
 
 " Syntax highlight
-" Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
 
 " Only run linters named in ale_linters settings.

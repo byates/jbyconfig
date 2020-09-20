@@ -4,6 +4,9 @@
 let g:nvim_dotfiles_dir = expand('<sfile>:p:h')
 " Flag indicating if terminal or gui
 let g:vim_ide = get(g:, 'vim_ide', 0)
+" polyglot_disabled must be declared prior to polyglot init
+" Default python highlight is better than polyglot provides
+let g:polyglot_disabled = ['python']
 
 "" Include plugins
 if filereadable(expand("~/.config/nvim/vim_plugins_init.vim"))
