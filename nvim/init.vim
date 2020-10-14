@@ -25,7 +25,7 @@ if filereadable(expand("~/.config/nvim/vim_editing_init.vim"))
 
 "" Include C++/C settings
 if filereadable(expand("~/.config/nvim/vim_cpp_init.vim"))
-  source ~/.config/nvim/vim_cpp_init.vim
+  ""source ~/.config/nvim/vim_cpp_init.vim
   endif
 
  " Include GO settings
