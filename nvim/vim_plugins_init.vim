@@ -71,7 +71,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
   Plug 'andymass/vim-matchup'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  ""Plug 'neoclide/coc.nvim', {'branch': 'release'}
   "" Autocomplete from other tmux windows
   Plug 'prabirshrestha/async.vim'
   Plug 'prabirshrestha/asyncomplete.vim'
