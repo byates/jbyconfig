@@ -8,6 +8,8 @@
     discard = checkout
     ll = log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
     llg = log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --graph
+    llga = git log --graph --decorate --oneline
+    llgt = git log --graph --decorate --oneline --simplify-by-decoration
     difm = diff --diff-filter=M
     difms = diff --diff-filter=M --staged
 [color]
