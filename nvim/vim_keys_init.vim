@@ -121,15 +121,19 @@ nnoremap <leader><BS> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 function! ToggleSignColumn()
     if !exists("b:signcolumn_on") || b:signcolumn_on
         set signcolumn=no
+        set nonumber
+        set nornu
         let b:signcolumn_on=0
     else
-        set signcolumn=auto
+        set signcolumn=yes
+        set number
+        set rnu
         let b:signcolumn_on=1
     endif
 endfunction
 
 "" Add toggle for line numbers and sign column
-noremap <leader><leader>n :set invnumber<CR>:call ToggleSignColumn()<CR>
+noremap <leader><leader>n :call ToggleSignColumn()<CR>
 
 nnoremap <silent> <F2> :TagbarToggle<CR>
 nnoremap <silent> <F5> :FzfPreviewProjectGrep<CR>
