@@ -54,12 +54,13 @@ call plug#begin(expand('~/.config/nvim/plugged'))
    "" Vim-Session
    Plug 'xolox/vim-misc'
    "" FZF fuzzy searching
-   Plug 'bogado/file-line'
-   Plug 'rbtnn/vim-jumptoline'
-   Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
-   Plug 'yuki-ycino/fzf-preview.vim'
+   "" Disabled due to recent bugs
+   ""Plug 'bogado/file-line'
+   ""Plug 'rbtnn/vim-jumptoline'
+   ""Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
+   ""Plug 'yuki-ycino/fzf-preview.vim'
    "" find and replace text through multiple files
-   Plug 'brooth/far.vim'
+   ""Plug 'brooth/far.vim'
 
 " Programming
   Plug 'editorconfig/editorconfig-vim'
