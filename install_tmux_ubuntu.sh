@@ -1,3 +1,5 @@
+#!/usr/bin/env bash	
+
 { # this ensures the entire script is downloaded #
 
 refresh_sudo_indefinitely()
@@ -60,7 +62,7 @@ if [ ! -d libevent-2.1.11-stable ]; then
     exit_on_error $?
     sudo ldconfig
 else
-        >&2 echo "-------------------------------------------------"
+		>&2 echo "-------------------------------------------------"
         >&2 echo "  SKIPPING LIBEVENT BUILD"
         >&2 echo "  '~/tools/libevent-2.1.11-stable' ALREADY EXISTS"
         >&2 echo "-------------------------------------------------"
