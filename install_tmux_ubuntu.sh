@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 { # this ensures the entire script is downloaded #
 
 refresh_sudo_indefinitely()
@@ -47,9 +45,9 @@ exit_on_error $?
 
 mkdir -p ~/tools && pushd ~/tools
 if [ ! -d libevent-2.1.11-stable ]; then
-	>&2 echo "------------------------------------------------------------"
-	>&2 echo "  BUILDING LIBEVENT"
-	>&2 echo "------------------------------------------------------------"
+        >&2 echo "------------------------------------------------------------"
+        >&2 echo "  BUILDING LIBEVENT"
+        >&2 echo "------------------------------------------------------------"
     wget https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz
     exit_on_error $?
     tar -xzf libevent*.tar.gz
@@ -62,55 +60,54 @@ if [ ! -d libevent-2.1.11-stable ]; then
     exit_on_error $?
     sudo ldconfig
 else
-	>&2 echo "-------------------------------------------------"
-	>&2 echo "  SKIPPING LIBEVENT BUILD"
- 	>&2 echo "  '~/tools/libevent-2.1.11-stable' ALREADY EXISTS"
-	>&2 echo "-------------------------------------------------"
+        >&2 echo "-------------------------------------------------"
+        >&2 echo "  SKIPPING LIBEVENT BUILD"
+        >&2 echo "  '~/tools/libevent-2.1.11-stable' ALREADY EXISTS"
+        >&2 echo "-------------------------------------------------"
 fi
 popd
 
 
 mkdir -p ~/tools && pushd ~/tools
 if [ ! -d tmux ]; then
-	>&2 echo "------------------------------------------------------------"
-	>&2 echo "  BUILDING TMUX"
-	>&2 echo "------------------------------------------------------------"
+        >&2 echo "------------------------------------------------------------"
+        >&2 echo "  BUILDING TMUX"
+        >&2 echo "------------------------------------------------------------"
     git clone https://github.com/tmux/tmux.git
     exit_on_error $?
     cd tmux
-    git checkout 3.0a
+    git checkout 3.1c
     exit_on_error $?
     sh autogen.sh
     LDFLAGS="-L/usr/local/lib -Wl,-rpath=/usr/local/lib" ./configure --prefix=/usr/local
     make
     exit_on_error $?
     sudo make install
-	exit_on_error $?
+        exit_on_error $?
     tmux -V
 else
-	>&2 echo "----------------------------------------------------------"
-	>&2 echo "  SKIPPING TMUX BUILD SINCE ~/tools/tmux ALREADY EXISTS."
-	>&2 echo "----------------------------------------------------------"
+        >&2 echo "----------------------------------------------------------"
+        >&2 echo "  SKIPPING TMUX BUILD SINCE ~/tools/tmux ALREADY EXISTS."
+        >&2 echo "----------------------------------------------------------"
 fi
 popd
 
 # config
 pushd ~
 if [ ! -d jbyconfig ]; then
-	git clone https://github.com/byates/jbyconfig.git
-	exit_on_error $?
+        git clone https://github.com/byates/jbyconfig.git
+        exit_on_error $?
 fi
 
 if [ ! -f .tmux.conf ]; then
-    ln -s ~/jbyconfig/.tmux.conf ~/.tmux.conf
+    ln -s ~/jbyconfig/tmux.conf ~/.tmux.conf
 else
-	>&2 echo "----------------------------------------------------------"
-	>&2 echo "  SKIPPING CONFIG UPDATE SINCE ~/.tmux.conf ALREADY EXISTS"
-	>&2 echo "----------------------------------------------------------"
+        >&2 echo "----------------------------------------------------------"
+        >&2 echo "  SKIPPING CONFIG UPDATE SINCE ~/.tmux.conf ALREADY EXISTS"
+        >&2 echo "----------------------------------------------------------"
 fi
 popd
 
 kill $(jobs -p)
 
 } # this ensures the entire script is downloaded #
-
