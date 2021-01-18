@@ -16,9 +16,6 @@ alias la='ls -Ax --color=auto --group-directories-first'
 alias ll='ls -l --color=auto --group-directories-first'
 alias lll='ls -lA --color=auto --group-directories-first'
 alias rsyncp='rsync -avzh --info=progress2 --info=name0 --stats'
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
 
 export loc_linux_kernel_generic=/usr/src/kernels/$(uname -r)
 export loc_linux_kernel=/usr/src/kernels/$(basename $(uname -r) -generic)
