@@ -1,7 +1,7 @@
 [core]
     editor = nvim
     autocrlf = false
-    pager = delta --theme="DarkNeon" --file-style=box
+    #pager = delta --theme="DarkNeon" --file-style=box
 [alias]
     tree = log --all --graph
     unstage = reset HEAD --
