@@ -1,5 +1,5 @@
 [core]
-    editor = nvim
+    editor = vim
     autocrlf = false
     #pager = delta --theme="DarkNeon" --file-style=box
 [alias]
