@@ -2,6 +2,8 @@
     editor = vim
     autocrlf = false
     #pager = delta --theme="DarkNeon" --file-style=box
+[diff]
+    wsErrorHighlight = all        
 [alias]
     tree = log --all --graph
     unstage = reset HEAD --
