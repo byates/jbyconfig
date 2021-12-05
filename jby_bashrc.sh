@@ -46,12 +46,12 @@ else
 fi
 
 # DPDK STUFF
-export DPDK_VER=dpdk-stable
+export DPDK_VER=dpdk
 export RTE_SDK=$HOME/tools/${DPDK_VER}
 export RTE_TARGET=x86_64-native-linux-gcc
 export PKG_CONFIG_PATH=~/tools/${DPDK_VER}/build/meson-private:$PKG_CONFIG_PATH
 alias dpstat='~/tools/${DPDK_VER}/usertools/dpdk-devbind.py --status'
-alias dpbind='/usr/bin/sudo -E ~/tools/${DPDK_VER}/usertools/dpdk-devbind.py --force --bind=vfio-pci'
+alias dpbind='/usr/bin/sudo -E ~/tools/${DPDK_VER}/usertools/dpdk-devbind.py --force --bind=igb_uio'
 alias dpunbind='/usr/bin/sudo -E ~/tools/${DPDK_VER}/usertools/dpdk-devbind.py -u'
 
 # dsf A B will procude "fancy" diffs.
