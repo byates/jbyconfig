@@ -76,9 +76,9 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
     else
         # ansible logs in as a 'dumb' terminal. Let's not add tmux on top of it.
         if [ "$TERM" != "dumb" ]; then
-            tmux
+            echo "tmux sessions:"
+            tmux ls
         fi
     fi
 fi
-
 
